@@ -20,8 +20,10 @@ resource "google_sql_database_instance" "postgres" {
   database_version = "POSTGRES_17"
   region           = var.region
 
+
   settings {
     tier = "db-custom-2-7680"
+    deletion_protection = false
     ip_configuration {
       ipv4_enabled    = false
       private_network = google_compute_network.vpc.id
