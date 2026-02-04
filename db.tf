@@ -36,7 +36,7 @@ resource "google_sql_database_instance" "postgres" {
 
 
 #database for dashboard
-resource "google_sql_database" "db" {
+resource "google_sql_database" "db1" {
   name     = "${var.name}_${var.env}_dashboard"
   instance = google_sql_database_instance.postgres.name
 }
@@ -48,25 +48,13 @@ resource "google_sql_user" "db_user" {
 }
 
 #database for booking
-resource "google_sql_database" "db" {
+resource "google_sql_database" "db2" {
   name     = "${var.name}_${var.env}_booking"
   instance = google_sql_database_instance.postgres.name
 }
 
-resource "google_sql_user" "db_user" {
-  name     = var.db_user
-  instance = google_sql_database_instance.postgres.name
-  password = random_password.db.result
-}
-
 #database for booking
-resource "google_sql_database" "db" {
+resource "google_sql_database" "db3" {
   name     = "${var.name}_${var.env}_event"
   instance = google_sql_database_instance.postgres.name
-}
-
-resource "google_sql_user" "db_user" {
-  name     = var.db_user
-  instance = google_sql_database_instance.postgres.name
-  password = random_password.db.result
 }
