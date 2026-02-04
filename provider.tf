@@ -9,7 +9,7 @@ terraform {
   }
 
   backend "gcs" {
-    bucket  = "ovb-state"
+    bucket  = "ovbiedo-new-terraform-state"
     prefix  = "cloudsql/terraform"
   }
 }
