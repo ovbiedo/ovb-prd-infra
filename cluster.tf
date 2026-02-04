@@ -12,7 +12,7 @@ resource "google_container_cluster" "autopilot" {
   release_channel {
     channel = "REGULAR"
   }
-
+  deletion_protection = false
   enable_autopilot = true
 }
 
