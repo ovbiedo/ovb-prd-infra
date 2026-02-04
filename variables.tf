@@ -19,7 +19,7 @@ variable "env" {
 variable "region" {
   type        = string
   description = "Primary region"
-  default     = "northamerica-northeast1"
+  default     = "northamerica-northeast2"
 }
 
 variable "network_name" {
