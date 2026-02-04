@@ -1,7 +1,7 @@
 variable "project_id" {
   type        = string
   description = "GCP project id"
-  default     = "speedy-web-481910-v7"
+  default     = "uat-oviedo"
 }
 
 variable "name" {
